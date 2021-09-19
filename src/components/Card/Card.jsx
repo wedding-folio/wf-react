@@ -1,26 +1,34 @@
-import { Link } from "react-router-dom"
-import styles from "./styles.css"
+import { useHistory } from "react-router-dom"
+import "./styles.css"
 
-function Card({ cardImage, cardTheme, cardTitle, cardLocation, cardDesc }) {
+function Card({ postData }) {
+
+  const { imageURL, weddingTheme, postTitle, location, postDesc } = postData;
+  const history = useHistory();
+
+  function handleButtonClick() {
+    history.push({ pathname: "/post/jane/2", state: postData })
+  }
+
   return (
     <div className={"card"}>
       <div className={"cardImageContainer"}>
         <div className={"cardThemePill"}>
-          <p>{cardTheme}</p>
+          <p>{weddingTheme}</p>
         </div>
-        <img src={cardImage} />
+        <img src={imageURL} />
       </div>
 
       <div className={"cardContent"}>
-        <h3>{cardTitle}</h3>
-        <p className={"cardLocationPill"}>{cardLocation}</p>
+        <h3>{postTitle}</h3>
+        <p className={"cardLocationPill"}>{location}</p>
 
         <p>
-          {cardDesc}
+          {postDesc}
         </p>
-        <Link to="/post/jane/2">
-          <span className={"cardButton middleOut"}>Learn More</span>
-        </Link>
+        {/* <Link to="/post/jane/2"> */}
+        <span className={"cardButton"} onClick={handleButtonClick}>Learn More</span>
+        {/* </Link> */}
       </div>
 
     </div >
