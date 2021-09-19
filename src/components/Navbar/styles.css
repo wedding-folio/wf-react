@@ -1,0 +1,113 @@
+
+/* utility to hid nav */
+.navbar {
+  border-bottom: 2px solid rgba(0,0,0,0.18);
+  padding: 1em 0;
+}
+
+.navContainer {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.toggleNav {
+  width: 30px;
+  height: 21px;
+  position: absolute;
+  top: .3rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.toggleBar {
+  height: 3px;
+  width: 100%;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.navList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  height: 0;
+}
+
+.navListVisible {
+  display: block;
+  height: auto;
+  padding-top: 1em;
+}
+
+.navItem {
+  border-bottom: 2px solid rgba(0,0,0,0.18);
+  text-align: right;
+  padding-bottom: .8em;
+}
+
+.navItem + .navItem {
+  margin: 1rem 0;
+}
+
+.navButton {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0.4rem 2rem;
+  border-radius: 1rem;
+  transition: all .3s ease-in-out;
+  display: inline-block;
+}
+
+.navButton:hover {
+  transform: scale(1.08);
+  box-shadow: 0 .28em 1em grey;
+}
+
+.buttonBlue {
+  background-color: var(--blue-800);
+  color: white;
+}
+
+.buttonBlack {
+  background-color: var(--black);
+  color: #FFFFFF;
+}
+
+@media screen and (min-width: 800px) {
+  
+  .navContainer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  .toggleNav {
+      display: none;
+  }
+
+
+  .navList {
+      display: flex;
+      height: auto;
+  }
+
+  .navListVisible {
+      padding: 0;
+  }
+
+  .navItem {
+      padding: 0;
+      margin: 0;
+      border: none;    
+  }
+
+  .navItem + .navItem {
+      margin: 0;
+      margin-left: .8em;
+  }
+}
