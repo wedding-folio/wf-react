@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom"
 import "./styles.css"
 
 function Navbar() {
@@ -12,13 +13,14 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navContainer">
-        <h1>Wedding Folio</h1>
-
-        <a href="#" className="toggleNav" onClick={() => handleNavToggle()}>
+        <Link to="/">
+          <h1 className="logo">Wedding Folio</h1>
+        </Link>
+        <span className="toggleNav" onClick={() => handleNavToggle()}>
           <span className="toggleBar"></span>
           <span className="toggleBar"></span>
           <span className="toggleBar"></span>
-        </a>
+        </span>
 
         <ul className={isHidden ? "navList" : "navList navListVisible"}>
           <li className="navItem">

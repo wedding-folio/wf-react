@@ -12,6 +12,10 @@
   position: relative;
 }
 
+.logo {
+  display: inline-block;
+}
+
 .toggleNav {
   width: 30px;
   height: 21px;
@@ -21,6 +25,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .toggleBar {
@@ -81,19 +86,20 @@
 @media screen and (min-width: 800px) {
   
   .navContainer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .toggleNav {
-      display: none;
+    display: none;
+    border: 2px solid red;
   }
 
 
   .navList {
-      display: flex;
-      height: auto;
+    display: flex;
+    height: auto;
   }
 
   .navListVisible {
@@ -101,13 +107,13 @@
   }
 
   .navItem {
-      padding: 0;
-      margin: 0;
-      border: none;    
+    padding: 0;
+    margin: 0;
+    border: none;    
   }
 
   .navItem + .navItem {
-      margin: 0;
-      margin-left: .8em;
+    margin: 0;
+    margin-left: .8em;
   }
 }
