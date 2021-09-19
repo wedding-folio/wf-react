@@ -54,13 +54,8 @@ const dummyPosts = [
 function Cards() {
   // State hooks
   const [posts, setPosts] = useState([]);
-
-  // Context hooks
   const filter = useFilterContext();
   const { updateThemeList } = useUpdateThemeContext();
-
-  // // React Query (data fetch)
-  // // const { data, status } = useQuery('posts', fetchUserPosts)
 
   // set posts on initial render
   useEffect(() => {
@@ -92,7 +87,7 @@ function Cards() {
   return (
     <div className={"cardContainer"}>
       {
-        posts.map((postObj, i) => <Card key={i} cardImage={postObj.imageURL} cardTheme={postObj.weddingTheme} cardTitle={postObj.postTitle} cardLocation={postObj.location} cardDesc={postObj.postDesc} />)
+        posts.map((postObj, i) => <Card key={i} postData={postObj} />)
       }
     </div>
   )
