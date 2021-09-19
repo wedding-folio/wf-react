@@ -1,0 +1,108 @@
+.toolbar {
+  border-bottom: 2px solid rgba(0,0,0,0.18);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: var(--cream);
+}
+
+.toolbarContainer {
+  width: 98%;
+  max-width: 120rem;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+}
+
+.toolbarTitle,
+.filterButton {
+  margin: 0;
+  padding: .5em 3em;
+}
+
+.toolbarTitle {
+  border-left: 2px solid rgba(0,0,0,0.18);
+  border-right: 2px solid rgba(0,0,0,0.18);
+}
+
+.filterWrapper {
+  position: absolute;
+  top: calc(100% + 1rem);
+}
+
+.filterContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.filterButton {
+  background-color: var(--cream);
+  border: 2px solid rgba(0,0,0,0.18);
+  border: 2px solid rgba(0,0,0,0.18);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s ease-in-out;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.filterButton:hover {
+  background-color: var(--cyan-100);
+}
+
+.filterMenu {
+  position: absolute;
+  top: 100%;
+  right:0;
+  width: 100%;
+  border: 2px solid rgba(0,0,0,0.18);
+  padding: 1em;
+  background-color: var(--cream);
+  z-index: 9999;
+}
+
+.filterMenuTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.formFieldSet {
+  border: none;
+  display: flex;
+  align-items: center;
+}
+
+.filterLabel {
+  display: block;
+}
+
+.filterLabel {
+  padding: .5em 0;
+}
+
+.filterOption {
+  margin-right: .8em;
+  transform: scale(1.5);
+}
+
+@media  screen and (min-width: 800px) {
+  
+  .toolbarContainer {
+    justify-content: space-between;
+  }
+
+  .filterWrapper {
+    position: static;
+  }
+
+  .filterButton {
+    border-top: none;
+    border-bottom: none;
+  }
+
+}
