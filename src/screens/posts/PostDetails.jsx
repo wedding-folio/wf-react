@@ -1,4 +1,6 @@
 import { useLocation } from "react-router-dom"
+import Details from "@components/Details"
+import OtherWork from "@components/OtherWork"
 
 function PostDetails() {
 
@@ -6,7 +8,8 @@ function PostDetails() {
   console.log(location)
   return (
     <div>
-      <h2>Post Details</h2>
+      <Details />
+      <OtherWork />
     </div>
   )
 }
