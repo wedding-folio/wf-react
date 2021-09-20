@@ -1,7 +1,7 @@
 
 function OtherWork() {
   return (
-    <div>
+    <div className="otherwork-container">
       <h2>Other Work</h2>
     </div>
   )

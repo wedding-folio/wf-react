@@ -33,3 +33,9 @@ img {
   --red: #ED2C49;
   --cream: #FAFAFA;
 }
+
+.container {
+  width: 98%;
+  max-width: 85em;
+  margin: 5em auto;
+}

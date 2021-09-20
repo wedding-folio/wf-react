@@ -7,7 +7,7 @@ function PostDetails() {
   const location = useLocation();
   console.log(location)
   return (
-    <div>
+    <div className="container">
       <Details />
       <OtherWork />
     </div>

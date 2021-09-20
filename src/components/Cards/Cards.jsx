@@ -85,7 +85,7 @@ function Cards() {
   }, [filter])
 
   return (
-    <div className={"cardContainer"}>
+    <div className={"container cardContainer"}>
       {
         posts.map((postObj, i) => <Card key={i} postData={postObj} />)
       }
