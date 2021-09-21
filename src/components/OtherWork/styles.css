@@ -1,4 +1,25 @@
 
 .otherwork-container {
-  border: 2px solid red;
+  /* border: 2px solid red; */
+  padding-top: 10em;
+}
+
+.otherwork-header {
+  text-align: center;
+}
+
+.header-underline {
+  height: .5em;
+  border: none;
+  background-color: var(--red);
+  width: 8em;
+  margin: auto;
+}
+
+.cards-container {
+  margin-top: 5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3em;
 }
