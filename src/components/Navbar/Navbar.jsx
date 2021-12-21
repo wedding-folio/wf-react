@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import "./styles.css"
 
 function Navbar() {
@@ -24,10 +24,10 @@ function Navbar() {
 
         <ul className={isHidden ? "navList" : "navList navListVisible"}>
           <li className="navItem">
-            <a href="#" className="navButton buttonBlue">Sign Up</a>
+            <NavLink to={"/signup"} className="navButton buttonBlue">Sign Up</NavLink>
           </li>
           <li className="navItem">
-            <a href="#" className="navButton buttonBlack">Login</a>
+            <NavLink to={"/login"} className="navButton buttonBlack">Login</NavLink>
           </li>
         </ul>
       </div>

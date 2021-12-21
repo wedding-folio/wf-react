@@ -1,0 +1,53 @@
+.form-wrapper {
+  /* border: 2px solid orange; */
+}
+
+.signup-form {
+  /* border: 2px solid purple; */
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: white;
+  border: 1px solid #b3b3b3;
+  border-radius: 0.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="password"] {
+  border-radius: 0.2rem;
+  padding: 0.8rem 0.5rem;
+  border: 2px solid var(--blue-800);
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--blue-800);
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1.2em;
+  margin: 2rem 0;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.28em 1em grey;
+}
+
+hr {
+  margin-bottom: 1.2rem;
+}

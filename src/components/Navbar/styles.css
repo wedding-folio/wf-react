@@ -1,7 +1,6 @@
-
 /* utility to hid nav */
 .navbar {
-  border-bottom: 2px solid rgba(0,0,0,0.18);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.18);
   padding: 1em 0;
 }
 
@@ -20,7 +19,7 @@
   width: 30px;
   height: 21px;
   position: absolute;
-  top: .3rem;
+  top: 0.3rem;
   right: 1rem;
   display: flex;
   flex-direction: column;
@@ -50,9 +49,9 @@
 }
 
 .navItem {
-  border-bottom: 2px solid rgba(0,0,0,0.18);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.18);
   text-align: right;
-  padding-bottom: .8em;
+  padding-bottom: 0.8em;
 }
 
 .navItem + .navItem {
@@ -64,13 +63,13 @@
   margin: 0;
   padding: 0.4rem 2rem;
   border-radius: 1rem;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   display: inline-block;
 }
 
 .navButton:hover {
   transform: scale(1.08);
-  box-shadow: 0 .28em 1em grey;
+  box-shadow: 0 0.28em 1em grey;
 }
 
 .buttonBlue {
@@ -80,11 +79,10 @@
 
 .buttonBlack {
   background-color: var(--black);
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 @media screen and (min-width: 800px) {
-  
   .navContainer {
     display: flex;
     align-items: center;
@@ -96,24 +94,23 @@
     border: 2px solid red;
   }
 
-
   .navList {
     display: flex;
     height: auto;
   }
 
   .navListVisible {
-      padding: 0;
+    padding: 0;
   }
 
   .navItem {
     padding: 0;
     margin: 0;
-    border: none;    
+    border: none;
   }
 
   .navItem + .navItem {
     margin: 0;
-    margin-left: .8em;
+    margin-left: 0.8em;
   }
 }

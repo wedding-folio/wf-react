@@ -1,6 +1,7 @@
-
 /* Basic reset */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -27,11 +28,11 @@ img {
 
 /* CSS Vars */
 :root {
-  --black: #24292E;
-  --blue-800: #3E54A3;
+  --black: #24292e;
+  --blue-800: #3e54a3;
   --cyan-100: rgba(219, 229, 230, 0.4);
-  --red: #ED2C49;
-  --cream: #FAFAFA;
+  --red: #ed2c49;
+  --cream: #fafafa;
 }
 
 .container {
