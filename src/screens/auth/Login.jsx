@@ -1,15 +1,36 @@
 import { useState } from "react"
-import { NavLink } from "react-router-dom"
+import { NavLink, useHistory } from "react-router-dom"
+import { supabase } from "../../lib/supabase/authClient"
 
 function Login(){
   const [formState, setFormState] = useState({
     email: "",
     password: "",
-    passwordConfirm: "",
   })
 
-  function handleSubmit(ev){
-    ev.preventDefault()
+  const history = useHistory()
+
+  function handleChange(e){
+    setFormState({...formState, [e.target.name]: e.target.value})
+  }
+
+  async function handleSubmit(e){
+    e.preventDefault()
+    
+    try {
+      const { error } = await supabase.auth.signIn({
+        email: formState.email,
+        password: formState.password
+      })
+
+      if(error)
+        throw error;
+      
+      history.push("/")
+
+    } catch(error) {
+      alert(error.error_description || error.message)
+    }
   }
 
   return(
@@ -20,12 +41,12 @@ function Login(){
 
           <div className="form-group">
             <label className="form-label" htmlFor="email">Email</label>
-            <input id="email" type="text" placeholder="Email"/>
+            <input onChange={handleChange} name="email" id="email" type="text" placeholder="Email"/>
           </div>
 
           <div className="form-group">
             <label className="form-label" htmlFor="password">Password</label>
-            <input id="password" type="password" placeholder="Password"/>
+            <input onChange={handleChange} name="password" id="password" type="password" placeholder="Password"/>
           </div>
 
           <button>Submit</button>
