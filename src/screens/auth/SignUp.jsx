@@ -1,6 +1,7 @@
 import { useState, } from "react"
-import { NavLink } from "react-router-dom"
-import "./SignUp.css"
+import { NavLink, useHistory } from "react-router-dom"
+import { supabase } from "../../lib/supabase/authClient"
+import "./base.css"
 
 function SignUp(){
   const [formState, setFormState] = useState({
@@ -9,8 +10,39 @@ function SignUp(){
     passwordConfirm: "",
   })
 
-  function handleSubmit(ev){
-    ev.preventDefault()
+  const history = useHistory();
+
+  function handleChange(e){
+    setFormState({...formState, [e.target.name]: e.target.value})
+  }
+
+  async function handleSubmit(e){
+    e.preventDefault()
+    console.log(formState)
+
+    if(formState.password !== formState.passwordConfirm){
+      alert("Passwords do not match")
+      return
+    }
+
+    try {
+      let { error } = await supabase.auth.signUp({
+        email: formState.email,
+        password: formState.password
+      })
+
+      if(error)
+        throw error;
+
+      history.push("/")
+      
+    }
+    catch(error){
+      alert(error.error_description || error.message)
+    }
+
+    
+    
   }
 
   return(
@@ -21,17 +53,17 @@ function SignUp(){
 
           <div className="form-group">
             <label className="form-label" htmlFor="email">Email</label>
-            <input id="email" type="text" placeholder="Email"/>
+            <input onChange={handleChange} name="email" id="email" type="text" placeholder="Email"/>
           </div>
 
           <div className="form-group">
             <label className="form-label" htmlFor="password">Password</label>
-            <input id="password" type="password" placeholder="Password"/>
+            <input onChange={handleChange} name="password" id="password" type="password" placeholder="Password"/>
           </div>
 
           <div className="form-group">
             <label className="form-label" htmlFor="passwordConfirm">Confirm Password</label>
-            <input id="passwordConfirm" type="password" placeholder="Confirm Password"/>
+            <input onChange={handleChange} name="passwordConfirm" id="passwordConfirm" type="password" placeholder="Confirm Password"/>
           </div>
 
           <button>Submit</button>
